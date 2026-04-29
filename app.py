@@ -7,17 +7,11 @@ from api.stats import stats_api
 
 # --- Config ---
 app = Flask(__name__)
-app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024 * 1024  # 20GB
-s
-FILES_DIRECTORY = os.path.join(app.root_path, 'files')
 
-if not os.path.exists(FILES_DIRECTORY):
-    os.makedirs(FILES_DIRECTORY)
-
-# File Serving Route
+# File Serving Route(im not using it anymore.)
 @app.route('/files/<path:filename>')
 def serve_custom_files(filename):
-    return send_from_directory(FILES_DIRECTORY, filename)
+    return send_from_directory(FILES_DIRECTORY, filename
 
 # Page Routes
 @app.route('/')
